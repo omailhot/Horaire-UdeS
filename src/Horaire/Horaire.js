@@ -15,8 +15,8 @@ const cours = [
     [],
     ["IFT585","IFT606","IGE401","IGL601","STT418"],
     [],
-    ["IGL301","IGE487","IFT604","IGE511","IFT615"],
-    ["IGE502","GRH121","IGE592","IGE692","IFT702"]
+    ["IGL301","IGE487","IGE511","IGE592","IFT615"],
+    ["IGE502","GRH121","IFT604","IGE692","IFT702"]
 ];
 
 const transpose = m => m[0].map((x,i) => m.map(x => x[i]))
