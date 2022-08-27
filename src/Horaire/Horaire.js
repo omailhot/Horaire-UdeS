@@ -21,33 +21,36 @@ const cours = [
 
 const transpose = m => m[0].map((x,i) => m.map(x => x[i]))
 
-const Horaire = () => 
-    <table id="cours">
-        <thead>
-            <tr id="sessions">
-                {sessions[0].map((session, index) => 
-                    <th key={index}>{session}</th>
-                )}
-            </tr>
-
-            <tr id="saison">
-                {sessions[1].map((saison, index) => 
-                    <th key={index}>{saison}</th>
-                )}
-            </tr>
-        </thead>
-
-        <tbody>
-            {transpose(cours).map((c, index) =>
-                <tr key={index}>
-                    {c.map((choix, index) => 
-                        <td className={`${c[index] === undefined ? "empty" : ""}`} key={index}>
-                            <a href={lienUdes + choix}>{choix}</a>
-                        </td>
+const Horaire = () => {
+    return (
+        <table id="cours">
+            <thead>
+                <tr id="sessions">
+                    {sessions[0].map((session, index) => 
+                        <th key={index}>{session}</th>
                     )}
                 </tr>
-            )}
-        </tbody>
-    </table>
+
+                <tr id="saison">
+                    {sessions[1].map((saison, index) => 
+                        <th key={index}>{saison}</th>
+                    )}
+                </tr>
+            </thead>
+
+            <tbody>
+                {transpose(cours).map((c, index) =>
+                    <tr key={index}>
+                        {c.map((choix, index) => 
+                            <td className={`${c[index] === undefined ? "empty" : ""}`} key={index}>
+                                <a href={lienUdes + choix}>{choix}</a>
+                            </td>
+                        )}
+                    </tr>
+                )}
+            </tbody>
+        </table>
+    )
+};
 
 export default Horaire;
